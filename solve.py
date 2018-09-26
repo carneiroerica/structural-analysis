@@ -1,4 +1,4 @@
-from tools.takeinput import get_support_value
+from takeinput import get_support_value
 
 def get_sfd(input_values, x):
     ''' Take input and position on the bar and gets the resulting sfd.
@@ -15,7 +15,7 @@ def get_sfd(input_values, x):
         udl = udls[i]
         if (float(udl[1])<=x and min(x,float(udl[2]))<=x):
             sfd += float(udl[0])*(min(x,float(udl[2]))-float(udl[1]))
-    
+
     point_loads = input_values.get('point_loads')
     for i in range(len(point_loads)):
         point_load = point_loads[i]
@@ -24,8 +24,8 @@ def get_sfd(input_values, x):
 
     return sfd
 
-def get_bmd(input_values, x): 
-    ''' 
+def get_bmd(input_values, x):
+    '''
         Take input and position on the bar and gets the resulting bmd.
 
         :param input_values: Dict containing all the values given at input.
@@ -40,7 +40,7 @@ def get_bmd(input_values, x):
         udl = udls[i]
         if (max(x,float(udl[1]))>=x and float(udl[2])>=x):
             bmd += float(udl[0])*(float(udl[2])-max(x, float(udl[1])))*((float(udl[2])+max(x, float(udl[1])))/2 -x)
-    
+
     point_loads = input_values.get('point_loads')
     for i in range(len(point_loads)):
         point_load = point_loads[i]

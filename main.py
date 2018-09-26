@@ -1,7 +1,7 @@
-from tools.solve import get_sfd, get_bmd, get_support_reactions
-from tools.takeinput import set_input, validate_input
-from tools.plot import plotter
-from tools.report import solve_reactions, solve_sfd, solve_bmd
+from solve import get_sfd, get_bmd, get_support_reactions
+from takeinput import set_input, validate_input
+from plot import plotter
+from report import solve_reactions, solve_sfd, solve_bmd
 from termcolor import colored
 import sys
 
@@ -49,3 +49,6 @@ def main():
             plotter(moments, positions, 'Bending Moment')
     except:
         print(colored('Please give a valid input! Try again', 'red'))
+
+if __name__=="__main__":
+	sys.exit(main())
